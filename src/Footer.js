@@ -1,6 +1,6 @@
-function Caja(props) {
+function Footer(props) {
     return (
-      <div className="Caja">
+      <div className="Footer">
           <p>
             Curso {props.nombre}
           </p>
@@ -8,4 +8,4 @@ function Caja(props) {
     );
   }
   
-  export default Caja;
+  export default Footer;
