@@ -1,0 +1,16 @@
+.bienvenidos {
+    animation: color 5s infinite ease;
+}
+
+@keyframes color {
+    0% {color: yellow;} 
+    25% {color: rgb(70, 70, 70)} 
+    50% {color: black;} 
+    75% {color: rgb(70, 70, 70)} 
+    100% {color: yellow;}
+}
+
+h2 {
+    font-family: monospace;
+    text-decoration: underline;
+}

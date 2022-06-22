@@ -2,7 +2,7 @@ import logo from '../logo.png';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import Carrito from './Carrito.js';
+import CartWidget from './CartWidget.js';
 import './Navbar.css';
 
 export function NavbarReact() {
@@ -17,12 +17,12 @@ export function NavbarReact() {
                                 src= {logo}
                                 width="30"
                                 height="30"
-                                className="d-inline-block"
+                                className="d-inline-block align-top"
                             />{' '}
                             <p className="mb-0 ms-4 d-none d-lg-block">Nombre de mi tienda</p>
                         </Navbar.Brand>
-                        <div className="d-flex">
-                            <div className='d-inline d-lg-none'><Carrito/></div>
+                        <div className="d-flex align-center">
+                            <div className='d-flex d-lg-none align-center me-2'><CartWidget/></div>
                             <div>
                                 <Navbar.Toggle aria-controls="responsive-navbar-nav" className='mx-2' />
                                 <Navbar.Collapse id="responsive-navbar-nav">
@@ -34,7 +34,7 @@ export function NavbarReact() {
                                     </Nav>
                                 </Navbar.Collapse>
                             </div>
-                            <div className='d-none d-lg-inline'><Carrito/></div>
+                            {<div className='d-none d-lg-flex align-center ms-2'><CartWidget/></div>}
                         </div>
                     </Container>
                 </Navbar>
