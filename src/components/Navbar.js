@@ -10,20 +10,22 @@ export function NavbarReact() {
         <header>
             <div>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-                    <Container className="align-top">
-                        <Navbar.Brand href="#home" className="d-flex align-center">
-                            <img
-                                alt=""
-                                src= {logo}
-                                width="30"
-                                height="30"
-                                className="d-inline-block align-top"
-                            />{' '}
-                            <p className="mb-0 ms-4 d-none d-lg-block">Nombre de mi tienda</p>
-                        </Navbar.Brand>
-                        <div className="d-flex align-center">
-                            <div className='d-flex d-lg-none align-center me-2'><CartWidget/></div>
-                            <div>
+                    <Container className='px-0'>
+                        <div className='logo px-2 d-flex align-items-center'>
+                            <Navbar.Brand href="#home" className="d-flex align-items-center">
+                                <img
+                                    alt=""
+                                    src= {logo}
+                                    width="30"
+                                    height="30"
+                                    className="d-inline-block"
+                                />{' '}
+                                <p className="mb-0 ms-4 d-none d-lg-block">Nombre de mi tienda</p>
+                            </Navbar.Brand>
+                        </div>
+                        <div className="d-flex">
+                            <div className='carrito d-flex d-lg-none align-items-center me-2'><CartWidget/></div>
+                            <div className='navCollapse bg-dark px-2 d-lg-flex align-items-center' >
                                 <Navbar.Toggle aria-controls="responsive-navbar-nav" className='mx-2' />
                                 <Navbar.Collapse id="responsive-navbar-nav">
                                     <Nav>
@@ -34,7 +36,7 @@ export function NavbarReact() {
                                     </Nav>
                                 </Navbar.Collapse>
                             </div>
-                            {<div className='d-none d-lg-flex align-center ms-2'><CartWidget/></div>}
+                            {<div className='carrito d-none d-lg-flex align-items-center ms-2'><CartWidget/></div>}
                         </div>
                     </Container>
                 </Navbar>

@@ -1,4 +1,6 @@
 .bienvenidos {
+    /* font-family: monospace; */
+    font-size: 24px;
     animation: color 5s infinite ease;
 }
 
@@ -12,5 +14,16 @@
 
 h2 {
     font-family: monospace;
+    font-size: 24px;
     text-decoration: underline;
+}
+
+.items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    height: 60vh;
+    overflow: auto;
 }

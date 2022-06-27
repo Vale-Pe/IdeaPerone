@@ -1,7 +1,26 @@
 .navbar {
+    height: 10vh;
     font-family: monospace;
 }
 
-.navbar-dark .navbar-nav .nav-link  {
+.navbar-dark .navbar-nav .nav-link {
     color: white;
+    width: 80px;
+}
+
+.logo {
+    height: calc(10vh - 16px);
+}
+
+.divNav {
+    width: 150px;
+    justify-content: space-evenly;
+}
+
+.navCollapse {
+    z-index: 1;
+}
+
+.carrito {
+    height: calc(10vh - 16px);
 }
