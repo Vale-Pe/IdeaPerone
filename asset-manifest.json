@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/IdeaPerone/static/css/main.20cc7892.css",
-    "main.js": "/IdeaPerone/static/js/main.1493db6f.js",
+    "main.css": "/IdeaPerone/static/css/main.ef3a6d41.css",
+    "main.js": "/IdeaPerone/static/js/main.d891bb28.js",
     "static/js/787.28cb0dcd.chunk.js": "/IdeaPerone/static/js/787.28cb0dcd.chunk.js",
     "static/media/logo.png": "/IdeaPerone/static/media/logo.89e84ed7c567ec81cb98.png",
     "index.html": "/IdeaPerone/index.html",
-    "main.20cc7892.css.map": "/IdeaPerone/static/css/main.20cc7892.css.map",
-    "main.1493db6f.js.map": "/IdeaPerone/static/js/main.1493db6f.js.map",
+    "main.ef3a6d41.css.map": "/IdeaPerone/static/css/main.ef3a6d41.css.map",
+    "main.d891bb28.js.map": "/IdeaPerone/static/js/main.d891bb28.js.map",
     "787.28cb0dcd.chunk.js.map": "/IdeaPerone/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.20cc7892.css",
-    "static/js/main.1493db6f.js"
+    "static/css/main.ef3a6d41.css",
+    "static/js/main.d891bb28.js"
   ]
 }
