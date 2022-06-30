@@ -1,0 +1,11 @@
+.card {
+    height: auto;
+    width: auto;
+    margin: 10px;
+    padding:10px;
+    font-family: monospace;
+}
+
+.card h4 {
+    font-weight: bold;
+}
