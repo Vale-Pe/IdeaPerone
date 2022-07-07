@@ -18,12 +18,7 @@ export const NavBarTienda = () => {
             {categories.map((cat) => {
                 return (
                     <div className="links" key={cat.id}>
-                        <NavLink
-                            to={cat.address}
-                            className={"link"}
-                        >
-                            {cat.text}
-                        </NavLink>
+                        <Link to={cat.address} /* <className={({ isActive }) => (isActive ? 'activeClass' : '')}> */> {cat.text}</Link>
                     </div>
                 );
             })}

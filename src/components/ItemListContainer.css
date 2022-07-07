@@ -1,8 +1,13 @@
-.bienvenidos {
+h3 {
     /* font-family: monospace; */
     font-size: 24px;
     animation: color 5s infinite ease;
 }
+
+/* .bienvenidos {
+    font-size: 24px;
+    animation: color 5s infinite ease;
+} */
 
 @keyframes color {
     0% {color: yellow;} 
