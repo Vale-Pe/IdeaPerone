@@ -1,0 +1,23 @@
+.detalle {
+    display: flex;
+    justify-content: center;
+    align-items: auto;
+}
+
+.card {
+    margin: 10px;
+    padding:10px;
+    font-family: monospace;
+}
+
+.card h4 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.card-detalle{
+    text-align: center;
+    display: inline-block;
+    height: 500px;
+    width: 500px;
+}

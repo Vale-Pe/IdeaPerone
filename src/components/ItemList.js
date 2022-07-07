@@ -8,7 +8,7 @@ function ItemList({items}) {
     return (
         <section>
             <div className='catalogo d-flex justify-content-center p-4'>
-                {items?.map(i => <Item id={i.id} title={i.title} category={i.category} price={i.price} description={i.description} key={i.id} />)} 
+                {items?.map((item) => (<Item {...item} key={item.id} />))} 
             </div>
         </section>
     );

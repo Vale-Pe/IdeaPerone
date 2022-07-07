@@ -1,6 +1,26 @@
 import React from 'react';
+import {Button } from "react-bootstrap";
+import ItemCount from './ItemCount';
+import './ItemDetail.css'
 
-function ItemDetail({products}) {
+function ItemDetail({id, title, category, price, description, pictureUrl, discount, greetings}) {
+
+    return (
+        <section className='detalle'>
+            <div className='card card-detalle d-flex justify-content-evenly'>
+                <img src='' alt={`Imagen del Producto ${id}`} />
+                <h4>{title}</h4>
+                <p>{description}</p>
+                <h2>{price}</h2>
+                <ItemCount stock={5} initial={0}/>
+                <Button variant="dark" className='m-3'>Agregar al carrito</Button>
+            </div>
+        </section>
+
+    )
+}
+
+/* function ItemDetail({products}) {
     console.log(products)
 
     const producto = products[0]
@@ -17,7 +37,7 @@ function ItemDetail({products}) {
         </section>
     </div>
     );
-}
+} */
 
 /* export const ItemDetail = ({
     id,
