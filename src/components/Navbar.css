@@ -3,13 +3,27 @@
     font-family: monospace;
 }
 
-.navbar-dark .navbar-nav .nav-link {
+.navbar-dark .navbar-nav a {
     color: white;
     width: 80px;
+    text-decoration: none;
+}
+
+.activeClass {
+    color: grey;
 }
 
 .logo {
     height: calc(10vh - 16px);
+}
+
+.logo span a{
+    display: flex;
+    text-decoration: none;
+}
+
+.logo span a p {
+    color: white;
 }
 
 .divNav {

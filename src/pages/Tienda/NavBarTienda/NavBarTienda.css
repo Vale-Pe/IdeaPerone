@@ -1,0 +1,12 @@
+.links {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 1rem;
+    text-decoration: none;
+}
+
+.links a {
+    font-weight: 2rem;
+    color: white;
+    text-decoration: none;
+}

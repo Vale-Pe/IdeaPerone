@@ -10,26 +10,24 @@ function ItemDetailContainer({greetings}) {
 
     useEffect(()=>{
         setTimeout(() => {
-            fetch('data.json', {
+            fetch('../data.json', {
                 headers : { 
                     'Content-Type': 'application/json',
                     'Accept': 'application/json'
                     }
-        })
+            })
             .then((resp)=>resp.json())
-            .then((data)=>setProducts(data))
-        }, 2000)    
+            .then((data)=> { setProducts(data) })
+            }, 2000)    
     }, [])
+
+    console.log(products)
 
     return (
         <section>
             <div className="lead bg-secondary py-4 d-flex row justify-content-evenly align-items-center h-100">
                 <h2 className='fw-semibold text-uppercase mb-4'>{greetings}</h2>
-                <ItemDetail products={products}
-                    // title={`${products.title}`}
-                    // description={`${products.description}`}
-                    // price={`${products.price}`}
-                />
+                {/* <ItemDetail products={products}/> */}
             </div>
         </section>
     )
