@@ -1,13 +1,11 @@
-h3 {
-    /* font-family: monospace; */
-    font-size: 24px;
+.bienvenido {
     animation: color 5s infinite ease;
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    margin: 0;
+    padding: 1rem;
 }
-
-/* .bienvenidos {
-    font-size: 24px;
-    animation: color 5s infinite ease;
-} */
 
 @keyframes color {
     0% {color: yellow;} 
@@ -21,4 +19,8 @@ h2 {
     font-family: monospace;
     font-size: 24px;
     text-decoration: underline;
+}
+
+.titulo {
+    text-align: center;
 }

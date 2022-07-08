@@ -31,7 +31,7 @@ function ItemDetailContainer({greetings}) {
 
     console.log(product)
 
-    return loading ? (<h2>Cargando...</h2>) : (<><h3 className='text-align-center'>{greetings}</h3> <ItemDetail {...product} /></>)
+    return loading ? (<h2 className='bg-white m-0 p-2 text-decoration-none text-center'>Cargando...</h2>) : (<><ItemDetail {...product} greetings={greetings} /></>)
 }
 
 /* function ItemDetailContainer({greetings}) {

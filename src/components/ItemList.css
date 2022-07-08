@@ -1,9 +1,38 @@
+.itemList{
+    height: auto;
+}
+
+.itemList section {
+    display: flex;
+    justify-content: center;
+
+}
+
+.links {
+    padding: 1rem 2rem;
+    text-decoration: none;
+    display: inline-block;
+    font-family: monospace;
+}
+
+.links a {
+    display: inline-block;
+    width: auto;
+    font-size: 1rem;
+    color: white;
+    text-decoration: none;
+}
+
 .catalogo{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    height: 60vh;
+    height: auto;
     overflow: auto;
+}
+
+.catalogo a {
+    text-decoration: none;
 }

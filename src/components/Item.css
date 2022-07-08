@@ -1,12 +1,32 @@
 .card {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
     height: auto;
-    width: auto;
+    width: 15rem;
     margin: 10px;
     padding:10px;
     font-family: monospace;
+    color: black;
+    border: 1px solid lightgray;
+    box-shadow: 2px 2px 10px lightgray;
 }
 
 .card h4 {
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: bold;
+    margin: 0;
+    padding: 0.5rem;
+    height: 50px;
+    text-align: center;
+}
+
+.card img {
+    height: 10rem;
+    width: 6.5rem;
+    object-fit: cover;
+}
+
+.card p {
+    margin-bottom: 4px;
 }

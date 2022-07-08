@@ -6,7 +6,6 @@ import Navbar from 'react-bootstrap/Navbar';
 import CartWidget from './CartWidget.js';
 import { BrowserRouter, NavLink } from 'react-router-dom';
 import { Home } from '../pages/Home/Home';
-import { Tienda } from '../pages/Tienda/Tienda';
 import { Nosotros } from '../pages/Nosotros/Nosotros';
 import { Contacto } from '../pages/Contacto/Contacto';
 import './Navbar.css';
@@ -36,11 +35,11 @@ export function NavbarReact() {
                             <div className='navCollapse bg-dark px-2 d-lg-flex align-items-center' >
                                 <Navbar.Toggle aria-controls="responsive-navbar-nav" className='mx-2' />
                                 <Navbar.Collapse id="responsive-navbar-nav">
-                                    <Nav>
-                                        <NavLink className={({ isActive }) => (isActive ? 'activeClass' : '')} to='Home' >Home</NavLink>
-                                        <NavLink className={({ isActive }) => (isActive ? 'activeClass' : '')} to='Tienda' >Tienda</NavLink>
-                                        <NavLink className={({ isActive }) => (isActive ? 'activeClass' : '')} to='Nosotros' >Nosotros</NavLink>
-                                        <NavLink className={({ isActive }) => (isActive ? 'activeClass' : '')} to='Contacto' >Contacto</NavLink>
+                                    <Nav className='navbarLinks'>
+                                        <NavLink className={({ isActive }) => (isActive ? 'activeClass' : 'linkNav')} to='Home' >Home</NavLink>
+                                        <NavLink className={({ isActive }) => (isActive ? 'activeClass' : 'linkNav')} to='Tienda' >Tienda</NavLink>
+                                        <NavLink className={({ isActive }) => (isActive ? 'activeClass' : 'linkNav')} to='Nosotros' >Nosotros</NavLink>
+                                        <NavLink className={({ isActive }) => (isActive ? 'activeClass' : 'linkNav')} to='Contacto' >Contacto</NavLink>
                                     </Nav>
                                 </Navbar.Collapse>
                             </div>

@@ -20,9 +20,9 @@ function ItemCount({stock}){
         }
     }
     return(
-        <div className='btns d-flex column justify-content-between mx-5'>
+        <div className='btns d-flex column justify-content-between mx-3'>
             <button onClick={restar}>-</button>
-            <p className='mb-0'>{num}</p>
+            <p className='mb-0 mx-3'>{num}</p>
             <button onClick={sumar}>+</button>
         </div>
     );

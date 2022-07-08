@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavbarReact from './components/Navbar';
 import Home from './pages/Home/Home';
-import Tienda from './pages/Tienda/Tienda';
+// import Tienda from './pages/Tienda/Tienda';
 import Nosotros from './pages/Nosotros/Nosotros';
 import Contacto from './pages/Contacto/Contacto';
 import ItemListContainer from './components/ItemListContainer';
@@ -16,7 +16,7 @@ function App() {
       <NavbarReact />
       <Routes>
         <Route path='/Home' element={<Home />} />
-        <Route path='/Tienda' element={<Tienda />} />
+        <Route path='/Tienda' element={<ItemListContainer greetings="¡Bienvenidos!" />}/* {<Tienda />}  *//>
         <Route path='/Nosotros' element={<Nosotros />} />
         <Route path='/Contacto' element={<Contacto />} />
         <Route path='/' element={<ItemListContainer greetings="¡Bienvenidos!" />} />

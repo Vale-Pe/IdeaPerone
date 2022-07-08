@@ -1,13 +1,15 @@
 import './ItemList.css';
-
+import NavBarTienda from '../pages/Tienda/NavBarTienda/NavBarTienda'
 import Item from "./Item";
 
 
-function ItemList({items}) {
+function ItemList({items, greetings}) {
 
     return (
-        <section>
-            <div className='catalogo d-flex justify-content-center p-4'>
+        <section className='itemList bg-secondary'>
+            <h3 className='bienvenido'>{greetings}</h3> 
+            <NavBarTienda />
+            <div className='catalogo container d-flex justify-content-center p-2'>
                 {items?.map((item) => (<Item {...item} key={item.id} />))} 
             </div>
         </section>

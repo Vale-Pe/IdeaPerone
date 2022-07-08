@@ -3,14 +3,14 @@
     font-family: monospace;
 }
 
-.navbar-dark .navbar-nav a {
-    color: white;
-    width: 80px;
+.navbarLinks a {
     text-decoration: none;
-}
+    padding: 8px;
+    color: lightgray;
+}  
 
-.activeClass {
-    color: grey;
+.navbarLinks .activeClass {
+    color: white;
 }
 
 .logo {

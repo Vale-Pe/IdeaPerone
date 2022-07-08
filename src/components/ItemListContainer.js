@@ -30,7 +30,7 @@ function ItemListContainer({greetings}) {
             .finally(() => setLoading(false));
     }, [catId]);
 
-    return loading ? (<h2>Cargando...</h2>) : (<><h3>{greetings}</h3> <ItemList items={items} /></>);
+    return loading ? (<h2 className='loading'>Cargando...</h2>) : (<><ItemList items={items} greetings={greetings}/></>);
 }
 
 /* function ItemListContainer({greetings}) {
