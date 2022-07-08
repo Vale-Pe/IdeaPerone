@@ -11,7 +11,7 @@ function ItemDetail({id, title, category, price, description, pictureUrl, discou
             <div className='card card-detalle d-flex justify-content-evenly'>
                 <img src={pictureUrl} alt={`Imagen del Producto ${id}`} />
                 <h4>{title}</h4>
-                <p className='fw-bold m-0'>{price}</p>
+                <p className='fw-bold m-0'>${price}</p>
                 <p className='m-0 p-2'>{description}</p>
                 <ItemCount stock={5} initial={0}/>
                 <Button variant="dark" className='m-3'>Agregar al carrito</Button>
