@@ -1,5 +1,10 @@
 .itemList{
     height: auto;
+    min-height: calc(100vh - 10vh);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .itemList section {
@@ -31,6 +36,7 @@
     align-items: center;
     height: auto;
     overflow: auto;
+    width: 90vw;
 }
 
 .catalogo a {

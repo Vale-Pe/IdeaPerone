@@ -10,8 +10,6 @@ function ItemDetailContainer({greetings}) {
     const [loading, setLoading] = useState(true)
     const { itemId } = useParams()
 
-    console.log(itemId)
-
     useEffect(() => {
         setLoading(true);
         const getItems = new Promise((resolve) => {
@@ -29,40 +27,7 @@ function ItemDetailContainer({greetings}) {
             .finally(() => setLoading(false))
     }, [itemId]);
 
-    console.log(product)
-
-    return loading ? (<h2 className='bg-white m-0 p-2 text-decoration-none text-center'>Cargando...</h2>) : (<><ItemDetail {...product} greetings={greetings} /></>)
+    return loading ? (<h2 className='loading bg-white m-0 p-2 text-decoration-none text-center'>Cargando...</h2>) : (<><ItemDetail {...product} greetings={greetings} /></>)
 }
-
-/* function ItemDetailContainer({greetings}) {
-    
-    const [products, setProducts] = useState([])
-    
-    console.log(products)
-
-    useEffect(()=>{
-        setTimeout(() => {
-            fetch('../data.json', {
-                headers : { 
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                    }
-            })
-            .then((resp)=>resp.json())
-            .then((data)=> { setProducts(data) })
-            }, 2000)    
-    }, [])
-
-    console.log(products)
-
-    return (
-        <section>
-            <div className="lead bg-secondary py-4 d-flex row justify-content-evenly align-items-center h-100">
-                <h2 className='fw-semibold text-uppercase mb-4'>{greetings}</h2>
-                //{<ItemDetail products={products}/> }
-            </div>
-        </section>
-    )
-} */
 
 export default ItemDetailContainer;

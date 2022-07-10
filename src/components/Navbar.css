@@ -1,3 +1,7 @@
+header {
+    width: 100%;
+}
+
 .navbar {
     height: 10vh;
     font-family: monospace;
@@ -15,6 +19,8 @@
 
 .logo {
     height: calc(10vh - 16px);
+    display: flex;
+    align-items: center;
 }
 
 .logo span a{
@@ -26,10 +32,10 @@
     color: white;
 }
 
-.divNav {
+/* .divNav {
     width: 150px;
     justify-content: space-evenly;
-}
+} */
 
 .navCollapse {
     z-index: 1;

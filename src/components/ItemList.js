@@ -9,7 +9,7 @@ function ItemList({items, greetings}) {
         <section className='itemList bg-secondary'>
             <h3 className='bienvenido'>{greetings}</h3> 
             <NavBarTienda />
-            <div className='catalogo container d-flex justify-content-center p-2'>
+            <div className='catalogo d-flex p-2'>
                 {items?.map((item) => (<Item {...item} key={item.id} />))} 
             </div>
         </section>

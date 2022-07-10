@@ -25,6 +25,7 @@
     height: 10rem;
     width: 6.5rem;
     object-fit: cover;
+    box-shadow: 0 0 10px grey;
 }
 
 .card p {

@@ -1,6 +1,7 @@
 .bienvenido {
     animation: color 5s infinite ease;
     color: white;
+    /* font-family: monospace; */
     font-size: 2rem;
     text-align: center;
     margin: 0;
@@ -15,12 +16,8 @@
     100% {color: yellow;}
 }
 
-h2 {
+.loading {
     font-family: monospace;
-    font-size: 24px;
+    font-size: 1rem;
     text-decoration: underline;
-}
-
-.titulo {
-    text-align: center;
 }

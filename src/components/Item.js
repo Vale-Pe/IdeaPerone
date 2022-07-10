@@ -11,8 +11,8 @@ function Item({id, title, category, price, pictureUrl}) {
                 <h4>{title}</h4>
                 <p>Categoría: {category}</p>
                 <p>${price}</p>
-                <ItemCount stock={5} initial={0}/>
-                <Button variant="dark" className='m-2'>Agregar al carrito</Button>
+                {/* <ItemCount stock={5} initial={0}/> */}
+                {/* <Button variant="dark" className='m-2'>Agregar al carrito</Button> */}
             </div>
         </Link>
     );
