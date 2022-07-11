@@ -7,11 +7,18 @@ import './ItemDetail.css'
 
 function ItemDetail({id, title, category, price, description, pictureUrl, discount, greetings}) {
 
-    const [cantidad, setCantidad] = useState(false)
+    const [ cantCart, setCantCart ] = useState(0);
+    const [ counter, setCounter ] = useState(true);
+    const [ compra, setCompra ] = useState(false);
 
-    const agregarAlCarrito = () => {
-        setCantidad(!cantidad)
+    const onAdd = (cantidad) => {
+        setCantCart(cantidad)
+        setCounter(false)
+        setCompra(true)
     }
+
+    console.log(cantCart)
+
 
     return (
         <section className='seccionDetalle bg-secondary'>
@@ -21,7 +28,9 @@ function ItemDetail({id, title, category, price, description, pictureUrl, discou
                 <h4>{title}</h4>
                 <p className='fw-bold m-0'>${price}</p>
                 <p className='m-0 p-2'>{description}</p>
-                <ItemCount stock={5} initial={0} onAdd={agregarAlCarrito}/>
+                { counter === true && <ItemCount inicial={0} stock={5} onAdd={onAdd} />}
+                { compra === true && <Button variant="dark" className='btnFin m-2 px-4' ><Link to='../Cart' className='text-decoration-none text-white fw-bold'>Terminar compra</Link></Button>}
+                {/* <ItemCount stock={5} initial={0} onAddHandler={onAdd}/> */}
             </div>
         </section>
     )
