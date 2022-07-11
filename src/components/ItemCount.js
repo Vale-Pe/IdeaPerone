@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 import './ItemCount.css';
 import { propTypes } from 'react-bootstrap/esm/Image';
 
-function ItemCount({stock, onAdd}){
-    const [num, setNum] = useState (0);
+function ItemCount({stock, onAdd, cantCart}){
+    const [num, setNum] = useState (cantCart);
     
     const sumar = () => {
         if (num < stock) {

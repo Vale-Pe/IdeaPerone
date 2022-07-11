@@ -10,6 +10,8 @@ function ItemDetail({id, title, category, price, description, pictureUrl, discou
     const [ cantCart, setCantCart ] = useState(0);
     const [ counter, setCounter ] = useState(true);
     const [ compra, setCompra ] = useState(false);
+    const producto = useState("producto")
+    const productos = useState("productos")
 
     const onAdd = (cantidad) => {
         setCantCart(cantidad)
@@ -18,6 +20,17 @@ function ItemDetail({id, title, category, price, description, pictureUrl, discou
     }
 
     console.log(cantCart)
+    console.log(producto[0])
+
+    let unidad
+
+    if (cantCart === 1) {
+        unidad = producto[0]
+    } else {
+        unidad = productos[0]
+    }
+
+    console.log(unidad)
 
 
     return (
@@ -28,8 +41,8 @@ function ItemDetail({id, title, category, price, description, pictureUrl, discou
                 <h4>{title}</h4>
                 <p className='fw-bold m-0'>${price}</p>
                 <p className='m-0 p-2'>{description}</p>
-                { counter === true && <ItemCount inicial={0} stock={5} onAdd={onAdd} />}
-                { compra === true && <Button variant="dark" className='btnFin m-2 px-4' ><Link to='../Cart' className='text-decoration-none text-white fw-bold'>Terminar compra</Link></Button>}
+                { counter === true && <ItemCount inicial={0} stock={5} onAdd={onAdd} cantCart={cantCart}/>}
+                { compra === true && <><p className='fw-bold text-warning'>Agregaste {cantCart} {unidad}</p><Button variant="dark" className='m-2 px-4' ><Link to='../Cart' className='text-decoration-none text-white fw-bold'>Terminar compra</Link></Button></>}
                 {/* <ItemCount stock={5} initial={0} onAddHandler={onAdd}/> */}
             </div>
         </section>
