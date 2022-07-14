@@ -1,11 +1,11 @@
-import React from 'react';
-import {useState} from 'react';
+import React, { useContext, useState } from 'react';
 import {Button } from "react-bootstrap";
 import ItemCount from './ItemCount';
+import { CartContext } from './Context/CartContext'
 import { Link } from 'react-router-dom';
 import './ItemDetail.css'
 
-function ItemDetail({id, title, category, price, description, pictureUrl, discount, greetings}) {
+function ItemDetail({id, title, category, price, description, pictureUrl, discount, quantity, greetings}) {
 
     const [ cantCart, setCantCart ] = useState(0);
     const [ counter, setCounter ] = useState(true);
@@ -13,14 +13,14 @@ function ItemDetail({id, title, category, price, description, pictureUrl, discou
     const producto = useState("producto")
     const productos = useState("productos")
 
-    const onAdd = (cantidad) => {
-        setCantCart(cantidad)
+    const { addToCart } = useContext(CartContext);
+
+    const onAdd = (num) => {
+        setCantCart(num)
         setCounter(false)
         setCompra(true)
+        addToCart({id, title, price, description, pictureUrl, quantity}, num)
     }
-
-    console.log(cantCart)
-    console.log(producto[0])
 
     let unidad
 
@@ -30,9 +30,6 @@ function ItemDetail({id, title, category, price, description, pictureUrl, discou
         unidad = productos[0]
     }
 
-    console.log(unidad)
-
-
     return (
         <section className='seccionDetalle bg-secondary'>
             <h3>{greetings}</h3> 
@@ -41,7 +38,7 @@ function ItemDetail({id, title, category, price, description, pictureUrl, discou
                 <h4>{title}</h4>
                 <p className='fw-bold m-0'>${price}</p>
                 <p className='m-0 p-2'>{description}</p>
-                { counter === true && <ItemCount inicial={0} stock={5} onAdd={onAdd} cantCart={cantCart}/>}
+                { counter === true && <ItemCount inicial={0} stock={5} onAdd={onAdd} cantCart={cantCart} quantity={quantity}/>}
                 { compra === true && <><p className='fw-bold text-warning'>Agregaste {cantCart} {unidad}</p><Button variant="dark" className='m-2 px-4' ><Link to='../Cart' className='text-decoration-none text-white fw-bold'>Terminar compra</Link></Button></>}
                 {/* <ItemCount stock={5} initial={0} onAddHandler={onAdd}/> */}
             </div>
