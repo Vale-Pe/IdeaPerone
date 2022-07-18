@@ -1,6 +1,5 @@
 import { createContext, useState } from 'react';
 import Swal from 'sweetalert2'
-import Cart from '../Cart';
 
 export const CartContext = createContext({})
 
@@ -19,7 +18,6 @@ export const CartProvider = ({ defaultValue = [], children }) => {
 /*      console.log(quantity)
         console.log(item.quantity)  */
 
-        // console.log(item.id)
         if(isInCart(item.id)) {
 
             const newCart = [...cart]
@@ -61,6 +59,7 @@ export const CartProvider = ({ defaultValue = [], children }) => {
     }
 
     const context = {
+        cart,
         clearCart,
         addToCart,
         isInCart,

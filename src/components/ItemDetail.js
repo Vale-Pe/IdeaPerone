@@ -39,7 +39,7 @@ function ItemDetail({id, title, category, price, description, pictureUrl, discou
                 <p className='fw-bold m-0'>${price}</p>
                 <p className='m-0 p-2'>{description}</p>
                 { counter === true && <ItemCount inicial={0} stock={5} onAdd={onAdd} cantCart={cantCart} quantity={quantity}/>}
-                { compra === true && <><p className='fw-bold text-warning'>Agregaste {cantCart} {unidad}</p><Button variant="dark" className='m-2 px-4' ><Link to='../Cart' className='text-decoration-none text-white fw-bold'>Terminar compra</Link></Button></>}
+                { compra === true && <><p className='fw-bold text-warning'>Agregaste {cantCart} {unidad}</p><Button variant="dark" className='m-2 px-4' ><Link to='../Cart' className='text-decoration-none text-white fw-bold'onAdd={onAdd} cantCart={cantCart} quantity={quantity} greetings='Carrito'>Terminar compra</Link></Button></>}
                 {/* <ItemCount stock={5} initial={0} onAddHandler={onAdd}/> */}
             </div>
         </section>
