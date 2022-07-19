@@ -4,9 +4,11 @@ import { CartContext } from './Context/CartContext'
 import './Cart.css'
 
 const Cart = ({greetings}) => {
-    const { cart, removeFromCart, clearCart } = useContext(CartContext);
+    const { items, removeFromCart, clearCart } = useContext(CartContext);
+
+    console.log(items)
     
-    if (cart.length === 0) {
+    if (items.length === 0) {
         return (
             <div className="cart">
                 <h3>{greetings}</h3>
@@ -18,12 +20,13 @@ const Cart = ({greetings}) => {
             <div className="cart">
                 <h3>{greetings}</h3> 
                 {
-                    cart.map(item =>(
-                        <div className="p-4" key={item.id}>
-                            <img className="img-fluid cartItemImg" src={item.pictureUrl} />
-                            <p>{item.title}</p>
-                            <p>${item.price}</p>
-                            <div className="btn btn-warning btn-sm" onClick={() => removeFromCart(item.id)}>Eliminar producto</div>
+                    items.map(item =>(
+                        <div className="p-4 card" key={item.item.id}>
+                            <img className="img-fluid cartItemImg" src={item.item.pictureUrl} />
+                            <p>{item.item.title}</p>
+                            <p>Cantidad: {item.quantity}</p>
+                            <p>${item.item.price * item.quantity}</p>
+                            <div className="btn btn-warning btn-sm" onClick={() => removeFromCart(item.item.id)}>Eliminar producto</div>
                         </div>
                     ))
                 }

@@ -43,4 +43,9 @@ header {
 
 .carrito {
     height: calc(10vh - 16px);
+    justify-content: center;
+}
+
+.carrito a {
+    text-decoration: none;
 }

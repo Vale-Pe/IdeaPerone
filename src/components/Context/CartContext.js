@@ -7,11 +7,13 @@ const {Provider} = CartContext
 
 export const CartProvider = ({ defaultValue = [], children }) => {
 
-    const [cart, setCart] = useState(defaultValue);
+    const [items, setItems] = useState(defaultValue);
 
     const clearCart = () => {
-        setCart([])
+        setItems([])
     }
+
+    const newItem = [...items]
 
     const addToCart = (item, quantity) => {
         console.log(item, quantity)
@@ -20,9 +22,7 @@ export const CartProvider = ({ defaultValue = [], children }) => {
 
         if(isInCart(item.id)) {
 
-            const newCart = [...cart]
-
-            for (const element of newCart) {
+            for (const element of newItem) {
                 if((element.item.id === item.id) && ((element.quantity + quantity)<=(item.quantity))) {
                     element.quantity = element.quantity + quantity;
                 } else {
@@ -33,13 +33,13 @@ export const CartProvider = ({ defaultValue = [], children }) => {
                     addToCart(false, false)
                 }
             }
-            setCart(newCart);
-            console.log(newCart)
+            setItems(newItem);
+            console.log(newItem)
 
         } else {
-            setCart(
+            setItems(
                 [
-                    ...cart,
+                    ...items,
                     {
                         item: item,
                         quantity: quantity
@@ -50,16 +50,20 @@ export const CartProvider = ({ defaultValue = [], children }) => {
     }
 
     const isInCart = (id) => {
-        return cart.find((element) => element.item.id ===id);
+        /* return items.find((element) => element.item.id ===id); */
+        const found = items.some((element) => element.item.id ===id)
+        return found;
     }
 
     const removeFromCart = (id) => {
-        const newCart = [...cart].filter(element => element.item.id !== id)
-        setCart(newCart);
+/*         const newItem = [...items].filter(element => element.item.id !== id)
+        setCart(newItem); */
+        setItems(items.filter(item => item.id !== id))
     }
 
     const context = {
-        cart,
+        newItem,
+        items,
         clearCart,
         addToCart,
         isInCart,
