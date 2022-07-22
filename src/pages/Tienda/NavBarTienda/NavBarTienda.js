@@ -7,7 +7,7 @@ import { Link, NavLink } from 'react-router-dom';
 
 export const NavBarTienda = () => {
     const categories = [
-    { id: 'a', address: '/', text: 'Todos los productos' },
+    { id: 'a', address: '/Tienda', text: 'Todos los productos' },
     { id: 'b', address: '/category/A', text: 'Categoria A' },
     { id: 'c', address: '/category/B', text: 'Categoria B' },
     ];
