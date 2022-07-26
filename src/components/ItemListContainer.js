@@ -3,39 +3,20 @@ import ItemList from './ItemList';
 import React, { useEffect, useState } from "react";
 import { data } from '../data/data'
 import { useParams } from 'react-router-dom'
-import { getFirestore, doc, getDoc, collection, getDocs, query, where } from 'firebase/firestore'
+import { getFirestore, doc, getDoc, collection, getDocs, query, where, } from 'firebase/firestore'
 
 function ItemListContainer({greetings}) {
 
     const [items, setItems] = useState([]);
     const [loading, setLoading] = useState([]);
     const params = useParams();
+
     let category = params.category;
-
-/*    useEffect(() => {
-        setLoading(true);
-        
-        const getItems = new Promise ((resolve) => {
-            setTimeout(() => {
-
-                const myData = catId ? data.filter((item) => item.category === catId) : data;
-                resolve(myData);
-            }, 1000)
-        });
-
-        getItems
-            .then((res) => {
-                setItems(res);
-            })
-            .finally(() => setLoading(false));
-    }, [catId]); */
 
     const db = getFirestore();
 
     useEffect(() => {
         setLoading(true);
-
-
 
         if(category === undefined){     
 

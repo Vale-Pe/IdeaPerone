@@ -10,7 +10,7 @@ function ItemList(props) {
             <h3 className='bienvenido'>¡Bienvenido!</h3> 
             <NavBarTienda />
             <div className='catalogo d-flex p-2'>
-                {props.items.map((item) => (<Item {...item} /* key={item.id}  *//>))} 
+                {props.items.map((item) => (<Item {...item} key={item.id}  />))} 
             </div>
         </section>
     );

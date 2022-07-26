@@ -8,6 +8,12 @@ const {Provider} = CartContext
 export const CartProvider = ({ defaultValue = [], children }) => {
 
     const [items, setItems] = useState(defaultValue);
+/*     const [precio, setPrecio] = useState(0)
+
+    const precioTotal = () => {
+        setPrecio(items.map(p => precio = ( precio + parseInt(p.item.products.price * p.quantity))))
+        //console.log(precio)
+    } */
 
     const clearCart = () => {
         setItems([])
@@ -20,21 +26,26 @@ export const CartProvider = ({ defaultValue = [], children }) => {
 /*      console.log(quantity)
         console.log(item.quantity)  */
 
-        if(isInCart(item.id)) {
+        if(isInCart(item.products.id)) {
+
+            console.log(item.products.id)
 
             for (const element of newItem) {
-                if((element.item.id === item.id) && ((element.quantity + quantity)<=(item.quantity))) {
-                    element.quantity = element.quantity + quantity;
+                if((element.quantity + quantity)<=(item.products.quantity)) {
+                    element.quantity = element.quantity + quantity
+
                 } else {
                     Swal.fire({
-                        text: `El máximo de productos permitidos es ${item.quantity}`,
+                        text: `El máximo de productos permitidos es ${item.products.quantity}`,
                         icon: 'error',
                     })
-                    addToCart(false, false)
+                    /* addToCart(false, false) */
                 }
+                setItems(newItem);
+                console.log(items)
             }
             setItems(newItem);
-            console.log(newItem)
+            console.log(items)
 
         } else {
             setItems(
@@ -46,19 +57,18 @@ export const CartProvider = ({ defaultValue = [], children }) => {
                     }
                 ]
             )
+            console.log(item)
         }
     }
 
     const isInCart = (id) => {
-        /* return items.find((element) => element.item.id ===id); */
-        const found = items.some((element) => element.item.id ===id)
-        return found;
+        //return items.find((element) => element.item.id ===id); 
+        const found = [...items].some((element) => element.item.products.id ===id)
+        return found ;
     }
 
     const removeFromCart = (id) => {
-/*         const newItem = [...items].filter(element => element.item.id !== id)
-        setCart(newItem); */
-        setItems(items.filter(item => item.id !== id))
+        setItems([...items].filter(element => element.item.products.id !== id))
     }
 
     const context = {

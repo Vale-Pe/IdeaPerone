@@ -2,7 +2,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faCartShopping} from '@fortawesome/free-solid-svg-icons';
 import { useContext } from "react"
 import { CartContext } from './Context/CartContext';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function CartWidget(){
 
@@ -13,10 +13,10 @@ function CartWidget(){
 
     return(
         <div >
-            <NavLink className='d-flex column justify-content-center align-items-center' to='../Cart'>
+            <div className='d-flex column justify-content-center align-items-center'>
                 <FontAwesomeIcon icon={faCartShopping} className='text-secondary'/>
-                { suma != 0 && <div className='d-flex justify-content-center bg-warning text-dark rounded-circle' style={{width: 24}}>{ suma }</div>}
-            </NavLink>
+                { suma !== 0 && <div className='d-flex justify-content-center bg-warning text-dark rounded-circle' style={{width: 18, fontSize: 12, padding: 0}}>{ suma }</div>}
+            </div>
         </div>
     );
 }

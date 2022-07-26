@@ -10,6 +10,7 @@ import Contacto from './pages/Contacto/Contacto';
 import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import Cart from './components/Cart';
+import Form from './components/Form';
 import { CartProvider } from './components/Context/CartContext'
 import NonFound from './pages/NonFound/NonFound';
 
@@ -20,11 +21,13 @@ function App() {
         <NavbarReact />
         <Routes>
           <Route path='' element={<Home />} />
+          <Route path='/IdeaPerone' element={<Home />} />
           <Route path='/Home' element={<Home />} />
           <Route path='/Tienda' element={<ItemListContainer greetings="¡Bienvenidos!" />}/* {<Tienda />}  *//>
           <Route path='/Nosotros' element={<Nosotros />} />
           <Route path='/Contacto' element={<Contacto />} />
           <Route path='/Cart' element={<Cart greetings="Carrito" />} />
+          <Route path='/Form' element={<Form/>} />
           <Route path='*' element={<NonFound />} />
           <Route path='/' element={<ItemListContainer greetings="¡Bienvenidos!" />} />
           <Route path='/category/:category' element={<ItemListContainer greetings="Filtro" />} />

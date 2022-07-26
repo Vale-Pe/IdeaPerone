@@ -17,6 +17,12 @@
     color: yellow
 }
 
+.cart .card{
+    display: inline-block;
+    width: 20vw;
+    height: auto;
+}
+
 .btn-warning {
     background-color: yellow;
     border: 0;
