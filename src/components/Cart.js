@@ -1,13 +1,20 @@
-import { useContext } from "react"
+import { useContext, useState, useEffect } from "react"
 import { Link } from "react-router-dom";
 import { CartContext } from './Context/CartContext'
 import './Cart.css'
 
 const Cart = (props) => {
     const { items, removeFromCart, clearCart } = useContext(CartContext);
+    const [price, setPrice] = useState(0)
 
-    let precio = 0
-    items.map(p => precio = ( precio + parseInt(p.item.products.price * p.quantity)))
+
+    useEffect(() => {
+        let precio = 0
+        items.map(p => precio = ( precio + parseInt(p.item.products.price * p.quantity)))
+        setPrice(precio)
+    }, [])
+
+    console.log(price)
     
     /* console.log(precio) */
     
@@ -34,10 +41,10 @@ const Cart = (props) => {
                     ))
                 }
                 <div>
-                    { precio !== 0 && <p className="m-3">TOTAL A PAGAR: ${precio}</p> }
+                    { price !== 0 && <p className="m-3">TOTAL A PAGAR: ${price}</p> }
                     <button type="button" className="m-2 btn btn-primary btn-sm"><Link to="/Tienda" className='text-decoration-none text-white'>Seguir comprando</Link></button>
                     <div className="m-2 btn btn-danger btn-sm" onClick={() => clearCart()}>Vaciar carrito</div>
-                    <div className="m-2 btn btn-dark btn-sm"><Link to="/Form" className='text-decoration-none text-white'>Terminar compra</Link></div>
+                    <div className="m-2 btn btn-dark btn-sm"><Link to="/Form" className='text-decoration-none text-white' price="price">Terminar compra</Link></div>
                 </div>
             </div>
         )

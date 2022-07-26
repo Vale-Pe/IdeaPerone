@@ -1,17 +1,15 @@
 import { addDoc } from 'firebase/firestore';
 import React, { useContext, useState, useEffect } from 'react';
 import { db } from '../index'
-import { doc, getDoc, collection, query, where} from 'firebase/firestore'
+import { docs, getDocs, collection, query, where} from 'firebase/firestore'
 import { CartContext } from "../components/Context/CartContext"
 
 import './Form.css';
 import { useParams } from 'react-router-dom';
 
-const Form = () => {
+const Form = (props) => {
 
     const { items, clearCart } = useContext(CartContext)
-
-    console.log(...items)
 
     const [newName, setNewName] = useState("")
     const [newMail, setNewMail] = useState("")
@@ -48,27 +46,37 @@ const Form = () => {
     
     useEffect(() => {
 
-        const orderDoc = query(collection(db,"orders"), where ("id", "==", id))
-        getDoc(orderDoc)
+        const orderDoc = collection(db,"orders")
+        getDocs(orderDoc)
         .then((order)=>{
-            setNewOrder({
-                id:order.id, 
-                ...order.data()
-            });
+            setNewOrder(order.docs.map((doc) => (doc.data())))
         })
-    }, [id])
+    }, [])
 
-    console.log(newOrder)
+    
+    useEffect(() => {
+        for (const item of items) {
+            let it = item.item.products
+            setItem(it)
+        }
+    }, [])
 
-    for (const item of items) {
-        let it = item.item.products
-        setItem(it)
-    }
+    const [price, setPrice] = useState(0)
+
+
+    useEffect(() => {
+        let precio = 0
+        items.map(p => precio = ( precio + parseInt(p.item.products.price * p.quantity)))
+        setPrice(precio)
+    }, [])
 
     const orderData = {
-        "buyer": {name: newName, phone: newPhone, mail: newMail},
+        "buyer": {
+            name: newName, 
+            phone: newPhone, 
+            mail: newMail},
         "items": item,
-        //"total": {precio},
+        "total": {price},
         "date": localDate()
     }
 
@@ -102,7 +110,7 @@ const Form = () => {
                 </div>
             </form>
             <section>
-                <p>{newOrder}</p>
+                <p></p>
             </section>
         </>
     );
