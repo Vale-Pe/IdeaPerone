@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: space-evenly;
     height: auto;
-    min-height: calc(100vh - 10vh);
+    min-height: calc(100vh - 10vh - 2rem);
     font-size: 2rem;
     color: white;
     text-align: center;
@@ -15,11 +15,12 @@
 .form__contacto {
     background-color: white;
     color: black;
-    height: 70vh;
+    height: 65vh;
     width: 70vw;
     overflow: auto;
     padding: 4px;
     font-family: monospace;
+    
 }
 
 .form__contacto .datos {
@@ -31,7 +32,7 @@
 
 #mensaje {
     margin-top: 4px;
-    height: 8rem;
+    height: 5rem;
     width: 100%;
     padding: 4px;
     margin-top: 4px;

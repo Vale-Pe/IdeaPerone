@@ -1,5 +1,5 @@
 .nosotros {
-    height: calc(100vh - 10vh);
+    height: calc(100vh - 10vh - 2rem);
     width: 100vw;
     background-color: grey;
     background-image: url('https://i0.wp.com/todalacultura.org/wp-content/uploads/2018/06/176739110-gales-luna-luz-brillar-reflejo.jpg?resize=640%2C360&ssl=1');

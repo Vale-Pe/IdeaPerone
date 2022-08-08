@@ -6,7 +6,7 @@
     overflow: auto;
     padding-top: 1vh;
     height: auto;
-    min-height: calc(100vh - 10vh);
+    min-height: calc(100vh - 10vh - 2rem);
     width: 100vw;
     border-top: 1px solid white
 }
@@ -22,7 +22,7 @@
 
 .seccionDetalle .card {
     margin: 10px 0;
-    padding:10px;
+    padding:4px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -49,11 +49,12 @@
 
 .card-detalle .detalle {
     font-family: monospace;
+    text-align: justify;
 }
 
 .card-detalle img {
     text-align: center;
-    height: 20rem;
+    height: 18rem;
     object-fit: cover;
 }
 

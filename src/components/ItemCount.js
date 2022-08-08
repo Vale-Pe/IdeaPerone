@@ -25,8 +25,6 @@ function ItemCount({inicial, stock, onAdd, quantity, cantCart}){
         }
     }
 
-    /* console.log(num) */
-
     const agregarCarrito = () =>{
 
         if (num !== 0) {
@@ -49,7 +47,6 @@ function ItemCount({inicial, stock, onAdd, quantity, cantCart}){
                 <button onClick={sumar}>+</button>
             </div>
             <Button variant="secondary" className='m-2 btn-add' onClick={agregarCarrito}>Agregar al carrito</Button>
-            {/* <Button variant="dark" className='btnFin m-2 px-4' ><Link to='../Cart' className='text-decoration-none text-white fw-bold'>Terminar compra</Link></Button> */}
         </>
     );
 }

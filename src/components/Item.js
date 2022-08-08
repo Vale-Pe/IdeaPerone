@@ -5,7 +5,7 @@ import {Button } from "react-bootstrap";
 import ItemCount from './ItemCount';
 import { Link } from 'react-router-dom'
 
-function Item(props /* {id, title, category, price, pictureUrl} */) {
+function Item(props) {
 
     return(
         <div className='card'>

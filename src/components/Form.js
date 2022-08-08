@@ -4,9 +4,9 @@ import { db } from '../index'
 import Swal from "sweetalert2";
 import { docs, getDocs, collection, query, where} from 'firebase/firestore'
 import { CartContext } from "../components/Context/CartContext"
-
 import './Form.css';
 import { Link, useParams } from 'react-router-dom';
+import Footer from './Footer';
 
 const Form = (props) => {
 
@@ -69,7 +69,7 @@ const Form = (props) => {
     }
 
     const finalizarCompra = async () => {
-        if (newName !== "" && newMail !== "" && newPhone != 0) {
+        if (newName !== "" && newMail !== "" && newPhone !== 0) {
             await addDoc(OrdersRef, orderData).then((doc) => {
                 setNewOrder(doc.id)
 
@@ -101,31 +101,34 @@ const Form = (props) => {
 
     return (
         <>
-            { newOrder !== "" ? 
-            <form onSubmit={submitHandler} className='formCompra bg-dark d-flex row justify-content-center align-items-center'>
-                <div className='input__datos'>
-                    <div className='input__dato'>
-                        <label htmlFor='name' >Nombre</label>
-                        <input type='text' id='name' placeholder='Nombre'value={newName} onChange={nameHandler} required/>
+            <div className='formulario'>
+                { newOrder !== "" ? 
+                <form onSubmit={submitHandler} className='formCompra bg-dark d-flex row justify-content-center '>
+                    <div className='input__datos'>
+                        <div className='input__dato'>
+                            <label htmlFor='name' >Nombre</label>
+                            <input type='text' id='name' placeholder='Nombre'value={newName} onChange={nameHandler} required/>
+                        </div>
+                        <div className='input__dato'>
+                            <label htmlFor='email'>Mail</label>
+                            <input type='email' id='email' placeholder='Mail'value={newMail} onChange={mailHandler} required/>
+                        </div>
+                        <div className='input__dato'>
+                            <label htmlFor='phone' >Teléfono</label>
+                            <input type='number' id='phone' value={newPhone} onChange={phoneHandler} required/>
+                        </div>
                     </div>
-                    <div className='input__dato'>
-                        <label htmlFor='email'>Mail</label>
-                        <input type='email' id='email' placeholder='Mail'value={newMail} onChange={mailHandler} required/>
+                    <div className='btnConfirm'>
+                        <button type='submit' className='btn btn-warning' onClick={finalizarCompra}>Finalzar compra</button>
                     </div>
-                    <div className='input__dato'>
-                        <label htmlFor='phone' >Teléfono</label>
-                        <input type='number' id='phone' value={newPhone} onChange={phoneHandler} required/>
-                    </div>
-                </div>
-                <div className='btnConfirm'>
-                    <button type='submit' className='btn btn-dark' onClick={finalizarCompra}>Finalzar compra</button>
-                </div>
-            </form> 
-            : 
-            <span className='fin bg-dark d-flex justify-content-center align-items-center'>
-                <button className='btn btn-warning'><Link to='/Home' className='text-decoration-none text-dark'>Ir al inicio</Link></button>
-            </span>
-            }
+                </form> 
+                : 
+                <span className='fin bg-dark d-flex justify-content-center align-items-center'>
+                    <button className='btn btn-warning'><Link to='/Home' className='text-decoration-none text-dark'>Ir al inicio</Link></button>
+                </span>
+                }
+            </div>
+            <Footer />
         </>
     );
 };

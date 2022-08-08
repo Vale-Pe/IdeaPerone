@@ -2,7 +2,8 @@ body {
     margin: 0;
     padding: 0;
     text-align: center;
-    background-color: rgb(33,37,41)
+    background-color: rgb(33,37,41);
+    height: calc(100vh - 10vh - 2rem);
 }
 
 .wrapper {

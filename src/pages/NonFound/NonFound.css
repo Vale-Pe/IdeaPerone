@@ -1,6 +1,6 @@
 .nonFound {
     height: auto;
-    min-height: calc(100vh - 10vh);
+    min-height: calc(100vh - 10vh - 2rem);
     background-color: grey;
     font-size: 2rem;
     color: white;

@@ -1,7 +1,14 @@
+.formulario {
+    height: calc(100vh - 10vh - 2rem);
+    display: flex;
+    justify-content: center;
+}
+
 .formCompra {
-    height: auto;
-    min-height: 90vh;
+    width: 100%;
+    min-height: calc(100vh - 10vh - 2rem);
     border-top: 1px solid white;
+    align-content: space-evenly;
 }
 
 .input__datos {
@@ -17,6 +24,7 @@
 
 .input__dato label {
     font-weight: bold;
+    color: grey;
     margin-bottom: 0.5rem;
     display: block;
 }
@@ -31,6 +39,7 @@
 
 .btnConfirm {
     text-align: center;
+    height: 50px;
 }
 
 .fin {

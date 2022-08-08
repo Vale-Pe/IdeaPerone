@@ -1,6 +1,6 @@
 .home {
     height: auto;
-    min-height: calc(100vh - 10vh);
+    min-height: calc(100vh - 10vh - 2rem);
     background-color: rgb(33,37,41);
     font-size: 2rem;
     color: white;
@@ -8,7 +8,7 @@
 }
 
 .img-carousel{
-    height: calc(100vh - 10vh);
+    height: calc(100vh - 10vh - 2rem);
     width: 100%;
     object-fit: cover;
 }
