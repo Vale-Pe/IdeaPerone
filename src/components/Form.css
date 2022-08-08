@@ -1,15 +1,17 @@
-Form {
+.formCompra {
     height: auto;
     min-height: 90vh;
 }
 
 .input__datos {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     gap: 1rem;
     margin-bottom: 1rem;
     text-align: left;
+    width: 60vw;
 }
 
 .input__dato label {
@@ -23,10 +25,14 @@ Form {
     padding: 0.5rem;
     border-radius: 6px;
     border: 1px solid #ccc;
-    width: 20rem;
-    max-width: 100%;
+    width: 100%;
 }
 
 .btnConfirm {
     text-align: center;
+}
+
+.fin {
+    height: auto;
+    min-height: 90vh;
 }

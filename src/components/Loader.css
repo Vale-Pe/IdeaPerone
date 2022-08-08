@@ -1,0 +1,77 @@
+body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #1A1C1D;
+}
+
+.wrapper {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.line {
+    position: relative;
+    display: inline-block;
+    width: 10%;
+    height: 80%;
+    background-color: #1A1C1D;
+    -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    animation: press .6s ease-in alternate infinite;
+}
+
+.line::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.7);
+    -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    animation: press-helper .6s ease-in alternate infinite;
+}
+
+.l-1, .l-1::after {
+    animation-delay: 0s;
+}
+
+.l-2, .l-2::after {
+    animation-delay: .2s;
+}
+
+.l-3, .l-3::after {
+    animation-delay: .4s;
+}
+
+.l-4, .l-4::after {
+    animation-delay: .6s;
+}
+
+.l-5, .l-5::after {
+    animation-delay: .8s;
+}
+
+@keyframes press {
+    from {-webkit-transform: scale(1, 1.25);
+    transform: scale(1, 1.25);}
+    to {-webkit-transform: scale(1, 1);
+    transform: scale(1, 1);}
+}
+
+@keyframes press-helper {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}

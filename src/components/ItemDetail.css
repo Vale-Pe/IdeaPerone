@@ -3,13 +3,12 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    /* height: calc(100vh - 10vh); */
     overflow: auto;
     padding-top: 1vh;
     height: auto;
     min-height: calc(100vh - 10vh);
     width: 100vw;
-    /* padding: 0 50px; */
+    border-top: 1px solid white
 }
 
 .seccionDetalle h3 {
@@ -24,16 +23,13 @@
 .seccionDetalle .card {
     margin: 10px 0;
     padding:10px;
-    font-family: monospace;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: space-evenly;
     width: 90vw;
 }
 
 .card-detalle{
-    text-align: center;
     display: inline-block;
     height: auto;
     width: auto;
@@ -43,14 +39,24 @@
     font-size: 1.2rem;
     font-weight: bold;
     margin: 0;
-    padding: 0.5rem;
     height: 50px;
-    text-align: center;
+    text-align: start;
+}
+
+.card-detalle p {
+    text-align: start;
+}
+
+.card-detalle .detalle {
+    font-family: monospace;
 }
 
 .card-detalle img {
     text-align: center;
-    height: 10rem;
-    width: 7rem;
+    height: 20rem;
     object-fit: cover;
+}
+
+.btn-verCarrito {
+    font-family: monospace;
 }

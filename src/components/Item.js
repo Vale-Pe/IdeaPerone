@@ -1,20 +1,30 @@
 import './Item.css';
+import React, { useContext, useState } from 'react';
+import { CartContext } from './Context/CartContext'
 import {Button } from "react-bootstrap";
 import ItemCount from './ItemCount';
 import { Link } from 'react-router-dom'
 
 function Item(props /* {id, title, category, price, pictureUrl} */) {
+
     return(
-        <Link to={`/product/${props.id}`}>
-            <div className='card'>
-                <img src={props.pictureUrl} alt='Imagen del producto' />
-                <h4>{props.title}</h4>
-                <p>Categoría: {props.category}</p>
-                <p>${props.price}</p>
-                {/* <ItemCount stock={5} initial={0}/> */}
-                {/* <Button variant="dark" className='m-2'>Agregar al carrito</Button> */}
-            </div>
-        </Link>
+        <div className='card'>
+            <Link to={`/product/${props.id}`}>
+                <div>
+                    <img src={props.pictureUrl} alt='Imagen del producto' />
+                </div>
+            </Link>
+            <Link to={`/product/${props.id}`}>
+                <div>
+                    <h4>{props.title}</h4>
+                </div>
+            </Link>
+            <p>${props.price}</p>
+            <Link to={`/product/${props.id}`}>
+                <button className='btn btn-dark'>Ver detalle</button>
+            </Link>
+            {/* <Button variant='white'>Agregar al carrito</Button> */}
+        </div>
     );
 }
 

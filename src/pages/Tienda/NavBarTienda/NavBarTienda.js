@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import './NavBarTienda.css';
 
 //uso de categorias en un array para que puedan ser dinamicas en un futuro. irian en la NavBar ej: traerlas de una base de datos
 
@@ -7,9 +8,9 @@ import { Link, NavLink } from 'react-router-dom';
 
 export const NavBarTienda = () => {
     const categories = [
-    { id: 'a', address: '/Tienda', text: 'Todos los productos' },
-    { id: 'b', address: '/category/A', text: 'Categoria A' },
-    { id: 'c', address: '/category/B', text: 'Categoria B' },
+    { id: 'a', address: '/Tienda', text: 'Todos los libros' },
+    { id: 'b', address: '/category/Libros-clásicos', text: 'Libros clásicos' },
+    { id: 'c', address: '/category/Libros-originales', text: 'Libros originales' },
     ];
 
     return (

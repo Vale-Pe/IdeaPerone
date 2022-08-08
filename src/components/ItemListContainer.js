@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { data } from '../data/data'
 import { useParams } from 'react-router-dom'
 import { getFirestore, doc, getDoc, collection, getDocs, query, where, } from 'firebase/firestore'
+import Loader from './Loader';
 
 function ItemListContainer({greetings}) {
 
@@ -36,8 +37,7 @@ function ItemListContainer({greetings}) {
     
     return (
         <div>
-            {loading ? (<h2 className='loading bg-white m-0 p-2 text-decoration-none text-center'>Cargando...</h2>) : (<><ItemList items={items} /* productos={items} *//></>)}
-            {/* {console.log(librosRef)} */}
+            {loading ? (<Loader />) : (<><ItemList items={items}/></>)}
         </div>
     )
 }

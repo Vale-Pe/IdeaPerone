@@ -33,16 +33,23 @@ function ItemDetail(props) {
     }
 
     return (
-        <section className='seccionDetalle bg-secondary'>
+        <section className='seccionDetalle bg-dark'>
             <h3>Detalle</h3> 
-            <div className='card card-detalle d-flex justify-content-evenly'>
-                <img src={props.products.pictureUrl} alt={`Imagen del Producto ${props.products.id}`} />
-                <h4>{props.products.title}</h4>
-                <p className='fw-bold m-0'>${props.products.price}</p>
-                <p className='m-0 p-2'>{props.products.description}</p>
-                { counter === true && <ItemCount inicial={0} stock={5} onAdd={onAdd} cantCart={cantCart} quantity={props.products.quantity}/>}
-                { compra === true && <><p className='fw-bold text-warning'>Agregaste {cantCart} {unidad}</p><Button variant="dark" className='m-2 px-4' ><Link to='../Cart' className='text-decoration-none text-white fw-bold' quantity={props.products.quantity} items={props.products}>Ver carrito</Link></Button></>}
-                {/* <ItemCount stock={5} initial={0} onAddHandler={onAdd}/> */}
+            <div className='card'>
+                <div className='d-flex column card-detalle '>
+                    <div className='d-flex justify-content-evenly px-4 pt-4'>
+                        <img src={props.products.pictureUrl} alt={`Imagen del Producto ${props.products.id}`} />
+                    </div>
+                    <div className='d-flex row px-4 pt-4'>
+                        <h4>{props.products.title}</h4>
+                        <p className='fw-lighter detalle'>{props.products.description}</p>
+                        <p >${props.products.price}</p>
+                    </div>
+                </div>
+                <div>
+                    { counter === true && <ItemCount inicial={0} stock={5} onAdd={onAdd} cantCart={cantCart} quantity={props.products.quantity}/>}
+                    { compra === true && <><p className='fw-bold text-warning'>Agregaste {cantCart} {unidad}</p><Button variant="dark" className='m-2 px-4 btn-verCarrito' ><Link to='../Cart' className='text-decoration-none text-white ' quantity={props.products.quantity} items={props.products}>Ver carrito</Link></Button></>}
+                </div>
             </div>
         </section>
     ) 

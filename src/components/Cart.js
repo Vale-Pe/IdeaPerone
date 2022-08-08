@@ -13,25 +13,22 @@ const Cart = (props) => {
         items.map(p => precio = ( precio + parseInt(p.item.products.price * p.quantity)))
         setPrice(precio)
     }, [])
-
-    console.log(price)
-    
-    /* console.log(precio) */
     
     if (items.length === 0) {
         return (
-            <div className="cart">
+            <div className="cart bg-dark">
                 <h3>Carrito</h3>
                 <p>No hay productos en el carrito.</p>
                 <button type="button" className="btn btn-warning"><Link to="/Tienda" className='text-decoration-none text-secondary'>Volver a la Tienda</Link></button>
             </div>
     )}else{
         return(
-            <div className="cart">
-                <h3>Carrito</h3> 
+            <div className="cart bg-dark">
+                <h3>Carrito</h3>
+                <div className="d-flex row justify-content-center">
                 {
                     items.map(item =>(
-                        <div className="p-3 card" key={item.item.products.id}>
+                        <div className="p-1 card" key={item.item.products.id}>
                             <img className="img-fluid cartItemImg" src={item.item.products.pictureUrl} alt='Imagen del producto' />
                             <h4>{item.item.products.title}</h4>
                             <p>Cantidad: {item.quantity}</p>
@@ -40,11 +37,12 @@ const Cart = (props) => {
                         </div>
                     ))
                 }
+                </div>
                 <div>
                     { price !== 0 && <p className="m-3">TOTAL A PAGAR: ${price}</p> }
-                    <button type="button" className="m-2 btn btn-primary btn-sm"><Link to="/Tienda" className='text-decoration-none text-white'>Seguir comprando</Link></button>
-                    <div className="m-2 btn btn-danger btn-sm" onClick={() => clearCart()}>Vaciar carrito</div>
-                    <div className="m-2 btn btn-dark btn-sm"><Link to="/Form" className='text-decoration-none text-white' price="price">Terminar compra</Link></div>
+                    <button type="button" className="m-2 btn btn-seguirComprando btn-sm"><Link to="/Tienda" className='text-decoration-none text-dark'>Seguir comprando</Link></button>
+                    <div className="m-2 btn btn-vaciarCart btn-sm text-white" onClick={() => clearCart()}>Vaciar carrito</div>
+                    <div className="m-2 btn btn-comprar btn-sm"><Link to="/Form" className='text-decoration-none text-white' price="price">Confirmar</Link></div>
                 </div>
             </div>
         )

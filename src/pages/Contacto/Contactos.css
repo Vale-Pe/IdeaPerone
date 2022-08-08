@@ -1,9 +1,39 @@
 .contactos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
     height: auto;
     min-height: calc(100vh - 10vh);
-    background-color: grey;
     font-size: 2rem;
     color: white;
     text-align: center;
     padding-top: 20px;
+    border-top: 1px solid white;
 }
+
+.form__contacto {
+    background-color: white;
+    color: black;
+    height: 70vh;
+    width: 70vw;
+    overflow: auto;
+    padding: 4px;
+    font-family: monospace;
+}
+
+.form__contacto .datos {
+    width: 100%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+#mensaje {
+    margin-top: 4px;
+    height: 8rem;
+    width: 100%;
+    padding: 4px;
+    margin-top: 4px;
+}
+

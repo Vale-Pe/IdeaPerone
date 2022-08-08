@@ -2,34 +2,42 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    text-align: center;
     height: auto;
     width: 15rem;
     margin: 10px;
     padding:10px;
-    font-family: monospace;
-    color: black;
     border: 1px solid lightgray;
     box-shadow: 2px 2px 10px lightgray;
+    background-color: rgba(255, 255, 255, 0.774);
 }
 
-.card h4 {
+.card a div h4 {
+    display: flex;
+    align-items: center;
     font-size: 1rem;
-    font-weight: bold;
     margin: 0;
-    padding-top: 1rem;
-    padding-bottom: 0.5rem;
+    padding-top: 8px;
+    padding-bottom: 4px;
     height: auto;
     min-height: 60px;
     text-align: center;
+    color: black;
 }
 
-.card img {
-    height: 10rem;
-    width: 6.5rem;
+.card a div img {
+    height: 12rem;
     object-fit: cover;
     box-shadow: 0 0 10px grey;
 }
 
 .card p {
+    font-weight: bold;
     margin-bottom: 4px;
+    text-align: center;
+    color: black;
+}
+
+.card a button{
+    font-family: monospace;
 }

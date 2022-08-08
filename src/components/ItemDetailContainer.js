@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom'
 import { db } from '../index'
 import { doc, getDoc} from 'firebase/firestore'
+import Loader from './Loader';
 
 function ItemDetailContainer({greetings}) {
 
@@ -28,7 +29,7 @@ function ItemDetailContainer({greetings}) {
 
     }, [itemId])
 
-    return loading ? (<h2 className='loading bg-white m-0 p-2 text-decoration-none text-center'>Cargando...</h2>) : (<><ItemDetail products={products} /></>)
+    return loading ? (<Loader />) : (<><ItemDetail products={products} /></>)
 }
 
 export default ItemDetailContainer;

@@ -4,6 +4,10 @@
 
 .btns button {
     border: 0;
-    background-color: rgb(250, 250, 162);
+    background-color: white;
     color: grey;
+}
+
+.btn-add {
+    font-family: monospace;
 }

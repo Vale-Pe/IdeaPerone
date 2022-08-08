@@ -1,9 +1,31 @@
 .nosotros {
-    height: auto;
-    min-height: calc(100vh - 10vh);
+    height: calc(100vh - 10vh);
+    width: 100vw;
     background-color: grey;
+    background-image: url('https://i0.wp.com/todalacultura.org/wp-content/uploads/2018/06/176739110-gales-luna-luz-brillar-reflejo.jpg?resize=640%2C360&ssl=1');
+    object-fit: cover;
     font-size: 2rem;
     color: white;
     text-align: center;
     padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nosotros__div{
+    width: 50vw;
+}
+
+.nosotros__div h3 {
+    color: lightgray;
+    text-decoration: underline;
+    margin: 8px;
+}
+
+.nosotros__div p {
+    color: lightgray;
+    font-family: monospace;
+    font-size: 1.5rem;
+    padding: 12px
 }
