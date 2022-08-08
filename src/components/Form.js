@@ -76,9 +76,10 @@ const Form = (props) => {
                 Swal.fire({
                     icon: 'success',
                     title: `Tu ID de compra es: ${doc.id}`,
-                    html: `¡Muchas gracias por tu compra! Te enviamos más información a <strong>${newMail}</strong>`,
+                    html: `¡Muchas gracias por tu compra! Te enviamos el resumen de tu compra a <strong>${newMail}</strong>`,
                     confirmButtonText: 'Ok!',
-                    showCloseButton: true
+                    showCloseButton: true,
+                    customClass: 'alertOrden'
                 }).then((result) => {
                     if (result.isConfirmed) {
                         clearCart()
@@ -101,7 +102,7 @@ const Form = (props) => {
     return (
         <>
             { newOrder !== "" ? 
-            <form onSubmit={submitHandler} className='formCompra bg-secondary d-flex row justify-content-center align-items-center'>
+            <form onSubmit={submitHandler} className='formCompra bg-dark d-flex row justify-content-center align-items-center'>
                 <div className='input__datos'>
                     <div className='input__dato'>
                         <label htmlFor='name' >Nombre</label>
@@ -121,7 +122,7 @@ const Form = (props) => {
                 </div>
             </form> 
             : 
-            <span className='fin bg-secondary d-flex justify-content-center align-items-center'>
+            <span className='fin bg-dark d-flex justify-content-center align-items-center'>
                 <button className='btn btn-warning'><Link to='/Home' className='text-decoration-none text-dark'>Ir al inicio</Link></button>
             </span>
             }

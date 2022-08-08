@@ -48,7 +48,7 @@ function ItemDetail(props) {
                 </div>
                 <div>
                     { counter === true && <ItemCount inicial={0} stock={5} onAdd={onAdd} cantCart={cantCart} quantity={props.products.quantity}/>}
-                    { compra === true && <><p className='fw-bold text-warning'>Agregaste {cantCart} {unidad}</p><Button variant="dark" className='m-2 px-4 btn-verCarrito' ><Link to='../Cart' className='text-decoration-none text-white ' quantity={props.products.quantity} items={props.products}>Ver carrito</Link></Button></>}
+                    { compra === true && <><p className='fw-bold text-secondary'>Agregaste {cantCart} {unidad}</p><Button variant="dark" className='m-2 px-4 btn-verCarrito' ><Link to='../Cart' className='text-decoration-none text-white ' quantity={props.products.quantity} items={props.products}>Ver carrito</Link></Button></>}
                 </div>
             </div>
         </section>

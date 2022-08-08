@@ -23,7 +23,6 @@ function Item(props /* {id, title, category, price, pictureUrl} */) {
             <Link to={`/product/${props.id}`}>
                 <button className='btn btn-dark'>Ver detalle</button>
             </Link>
-            {/* <Button variant='white'>Agregar al carrito</Button> */}
         </div>
     );
 }

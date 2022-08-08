@@ -9,11 +9,11 @@
 }
 
 @keyframes color {
-    0% {color: yellow;} 
+    0% {color: #FFC107;} 
     25% {color: rgb(70, 70, 70)} 
     50% {color: black;} 
     75% {color: rgb(70, 70, 70)} 
-    100% {color: yellow;}
+    100% {color: #FFC107;}
 }
 
 .loading {

@@ -19,7 +19,7 @@ const Cart = (props) => {
             <div className="cart bg-dark">
                 <h3>Carrito</h3>
                 <p>No hay productos en el carrito.</p>
-                <button type="button" className="btn btn-warning"><Link to="/Tienda" className='text-decoration-none text-secondary'>Volver a la Tienda</Link></button>
+                <button type="button" className="btn btn-warning"><Link to="/Tienda" className='text-decoration-none text-dark'>Volver a la Tienda</Link></button>
             </div>
     )}else{
         return(
@@ -29,8 +29,8 @@ const Cart = (props) => {
                 {
                     items.map(item =>(
                         <div className="p-1 card" key={item.item.products.id}>
-                            <img className="img-fluid cartItemImg" src={item.item.products.pictureUrl} alt='Imagen del producto' />
-                            <h4>{item.item.products.title}</h4>
+                            <Link to={`/product/${item.item.products.id}`}><img className="img-fluid cartItemImg" src={item.item.products.pictureUrl} alt='Imagen del producto' /></Link>
+                            <Link to={`/product/${item.item.products.id}`} className="text-decoration-none"><h4 className="text-decoration-underline">{item.item.products.title}</h4></Link>
                             <p>Cantidad: {item.quantity}</p>
                             <p>${item.item.products.price /* * item.quantity */}</p>
                             <div className="btn btn-warning btn-sm mt-2" onClick={() => removeFromCart(item.item.products.id)}>Eliminar producto</div>
@@ -40,9 +40,9 @@ const Cart = (props) => {
                 </div>
                 <div>
                     { price !== 0 && <p className="m-3">TOTAL A PAGAR: ${price}</p> }
-                    <button type="button" className="m-2 btn btn-seguirComprando btn-sm"><Link to="/Tienda" className='text-decoration-none text-dark'>Seguir comprando</Link></button>
-                    <div className="m-2 btn btn-vaciarCart btn-sm text-white" onClick={() => clearCart()}>Vaciar carrito</div>
-                    <div className="m-2 btn btn-comprar btn-sm"><Link to="/Form" className='text-decoration-none text-white' price="price">Confirmar</Link></div>
+                    <button type="button" className="m-2 btn btn-seguirComprando"><Link to="/Tienda" className='text-decoration-none text-dark'>Seguir comprando</Link></button>
+                    <div className="m-2 btn btn-vaciarCart text-white" onClick={() => clearCart()}>Vaciar carrito</div>
+                    <div className="m-2 btn btn-comprar"><Link to="/Form" className='text-decoration-none text-white' price="price">Confirmar</Link></div>
                 </div>
             </div>
         )

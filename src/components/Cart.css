@@ -14,7 +14,7 @@
     margin: 0;
     padding: 1rem;
     font-size: 1.5rem;
-    color: yellow
+    color: #FFC107;
 }
 
 .cart .card{
@@ -28,19 +28,20 @@
 }
 
 .cart .card img {
-    height: 10rem;
+    height: 7rem;
+    border-radius: 10%;
     object-fit: cover;
 }
 
 .cart .card h4 {
     color: black;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     width: 20rem;
     text-align: center;
 }
 
 .btn-warning {
-    background-color: yellow;
+    background-color: #FFC107;
     border: 0;
     font-family: monospace;
 }

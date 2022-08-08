@@ -1,6 +1,7 @@
 .formCompra {
     height: auto;
     min-height: 90vh;
+    border-top: 1px solid white;
 }
 
 .input__datos {
@@ -35,4 +36,15 @@
 .fin {
     height: auto;
     min-height: 90vh;
+    border-top: 1px solid white;
+}
+
+.alertOrden .swal2-title {
+    font-family: monospace;
+}
+
+.alertOrden .swal2-confirm {
+    font-family: monospace;
+    background-color: #FFC107;
+    color: black;
 }

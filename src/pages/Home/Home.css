@@ -1,7 +1,7 @@
 .home {
     height: auto;
     min-height: calc(100vh - 10vh);
-    background-color: grey;
+    background-color: rgb(33,37,41);
     font-size: 2rem;
     color: white;
     text-align: center;
