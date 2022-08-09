@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/IdeaPerone/static/css/main.e0e2988b.css",
-    "main.js": "/IdeaPerone/static/js/main.69610d9e.js",
+    "main.css": "/IdeaPerone/static/css/main.927f02bc.css",
+    "main.js": "/IdeaPerone/static/js/main.b0115d2b.js",
     "static/js/787.28cb0dcd.chunk.js": "/IdeaPerone/static/js/787.28cb0dcd.chunk.js",
     "static/media/logo.png": "/IdeaPerone/static/media/logo.89e84ed7c567ec81cb98.png",
     "index.html": "/IdeaPerone/index.html",
-    "main.e0e2988b.css.map": "/IdeaPerone/static/css/main.e0e2988b.css.map",
-    "main.69610d9e.js.map": "/IdeaPerone/static/js/main.69610d9e.js.map",
+    "main.927f02bc.css.map": "/IdeaPerone/static/css/main.927f02bc.css.map",
+    "main.b0115d2b.js.map": "/IdeaPerone/static/js/main.b0115d2b.js.map",
     "787.28cb0dcd.chunk.js.map": "/IdeaPerone/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e0e2988b.css",
-    "static/js/main.69610d9e.js"
+    "static/css/main.927f02bc.css",
+    "static/js/main.b0115d2b.js"
   ]
 }
