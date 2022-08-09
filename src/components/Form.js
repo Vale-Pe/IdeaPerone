@@ -1,14 +1,14 @@
-import { addDoc, getDoc } from 'firebase/firestore';
+import { addDoc } from 'firebase/firestore';
 import React, { useContext, useState, useEffect } from 'react';
 import { db } from '../index'
 import Swal from "sweetalert2";
-import { docs, getDocs, collection, query, where} from 'firebase/firestore'
+import { collection} from 'firebase/firestore'
 import { CartContext } from "../components/Context/CartContext"
 import './Form.css';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Footer from './Footer';
 
-const Form = (props) => {
+const Form = () => {
 
     const { items, clearCart } = useContext(CartContext)
 

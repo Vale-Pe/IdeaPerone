@@ -46,6 +46,9 @@ function ItemCount({inicial, stock, onAdd, quantity, cantCart}){
                 <p className='mb-0 mx-3'>{num}</p>
                 <button onClick={sumar}>+</button>
             </div>
+            <button type="button" className="m-2 btn btn-seguirComprando border-dark">
+                <Link to="/Tienda" className='text-decoration-none text-dark'>Seguir comprando</Link>
+            </button>
             <Button variant="secondary" className='m-2 btn-add' onClick={agregarCarrito}>Agregar al carrito</Button>
         </>
     );

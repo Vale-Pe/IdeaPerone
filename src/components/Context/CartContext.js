@@ -23,8 +23,6 @@ export const CartProvider = ({ defaultValue = [], children }) => {
 
     const addToCart = (item, quantity) => {
         console.log(item, quantity)
-/*      console.log(quantity)
-        console.log(item.quantity)  */
 
         if(isInCart(item.products.id)) {
 
@@ -39,7 +37,6 @@ export const CartProvider = ({ defaultValue = [], children }) => {
                         text: `El máximo de productos permitidos es ${item.products.quantity}`,
                         icon: 'error',
                     })
-                    /* addToCart(false, false) */
                 }
                 setItems(newItem);
                 console.log(items)
@@ -62,7 +59,6 @@ export const CartProvider = ({ defaultValue = [], children }) => {
     }
 
     const isInCart = (id) => {
-        //return items.find((element) => element.item.id ===id); 
         const found = [...items].some((element) => element.item.products.id ===id)
         return found ;
     }

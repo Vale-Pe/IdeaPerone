@@ -7,14 +7,14 @@ import Footer from "./Footer";
 const Cart = () => {
     const { items, removeFromCart, clearCart } = useContext(CartContext);
     const [price, setPrice] = useState(0)
-
-
+    
+    
     useEffect(() => {
         let precio = 0
         items.map(p => precio = ( precio + parseInt(p.item.products.price * p.quantity)))
         setPrice(precio)
-    }, [])
-    
+    }, [removeFromCart])
+
     
     if (items.length === 0) {
         return (
@@ -39,7 +39,7 @@ const Cart = () => {
                                 <Link to={`/product/${item.item.products.id}`} className="text-decoration-none"><h4 className="text-decoration-underline">{item.item.products.title}</h4></Link>
                                 <p>Cantidad: {item.quantity}</p>
                                 <p>${item.item.products.price}</p>
-                                <div className="btn btn-warning btn-sm mt-2" onClick={() => removeFromCart(item.item.products.id)}>Eliminar producto</div>
+                                <div className="btn btn-warning btn-sm mt-2" onClick={() => {removeFromCart(item.item.products.id) }}>Eliminar producto</div>
                             </div>
                         ))
                     }

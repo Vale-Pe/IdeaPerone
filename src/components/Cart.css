@@ -48,12 +48,15 @@
 
 .btn-seguirComprando{
     background-color: lightgrey;
+    font-family: monospace;
 }
 
 .btn-vaciarCart {
     background-color: rgb(95, 95, 95);
+    font-family: monospace;
 }
 
 .btn-comprar {
     background-color: black;
+    font-family: monospace;
 }
