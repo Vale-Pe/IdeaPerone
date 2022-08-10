@@ -18,6 +18,6 @@ Elige tu propia aventura es un proyecto que corresponde a una tienda de libros d
 
 • Navegación: podés visualizar el sitio en el siguiente gif:
 
-![Alt Text](/public/Elige-tu-propia-aventura-gif.gif)
+![image](public/Elige-tu-propia-aventura-gif.gif)
 
 • Proyecto realizado por Valeria B. Perone para el curso React js de CoderHouse.
